@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\MobilController; //load controller post
+use App\Http\Controllers\MobilController; //load controller 
+use App\Http\Controllers\PeminjamanController; //load controller post
+use App\Http\Controllers\PengembalianController; //load controller post
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,6 @@ Route::get('/', function () {
 });
 
 Route::resource('mobil', MobilController::class);
+Route::resource('peminjaman', PeminjamanController::class);
+Route::resource('pengembalian', PengembalianController::class);
+Route::post('/pengembalians', 'PengembalianController@store')->name('pengembalians.store');
